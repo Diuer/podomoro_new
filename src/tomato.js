@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, useMemo } from "react";
 import styled from 'styled-components';
 
 const TomatoStyle = styled.div`
@@ -38,10 +38,12 @@ const TomatoStyle = styled.div`
   }
 `;
 
-export default function Tomato({ isDisabled, cursorKind, ...props }) {
-  return (
-    <TomatoStyle isDisabled={isDisabled} cursorKind={cursorKind}>
+export default function Tomato({ id, isDisabled, cursorKind, callback = () => { }, ...props }) {
+  return useMemo(() => {
+    return (
+      <TomatoStyle id={id} isDisabled={isDisabled} cursorKind={cursorKind} onClick={callback}>
 
-    </TomatoStyle>
-  )
+      </TomatoStyle>
+    )
+  }, [isDisabled])
 }

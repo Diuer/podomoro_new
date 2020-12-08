@@ -19,17 +19,10 @@ const ButtonStyle = styled.div`
   cursor: pointer;
 `;
 
-export default function SliderButton() {
-
-  const [isOpenedSlider, setSlider] = useState(false);
-
-  useEffect(() => {
-    GlobalData.isOpenedSlider = isOpenedSlider
-  }, [isOpenedSlider]);
+export default function SliderButton({ onClickSlider, isOpenedSlider, ...props }) {
 
   return (
-    < ButtonStyle onClick={() => { setSlider(!isOpenedSlider) }
-    }>
+    < ButtonStyle onClick={onClickSlider}>
       <Tomato isDisabled={false} cursorKind={'pointer'} />
       {
         (isOpenedSlider ?
