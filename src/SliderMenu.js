@@ -17,7 +17,6 @@ const MenuContainerStyle = styled.div`
   align-items: center;
   width: 80px;
   height: 100%;
-  border-right: 2px solid #414141;
 `;
 const MenuIconStyle = styled.div`
   display: flex;
@@ -32,8 +31,7 @@ const MenuIconStyle = styled.div`
   }
 `;
 
-export default function SliderMenu({ ...props }) {
-  const [nowMenu, setNowMenu] = useState('addTask');
+export default function SliderMenu({ nowMenu, setNowMenu, ...props }) {
 
   return (
     <MenuContainerStyle>
