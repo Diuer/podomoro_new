@@ -1,35 +1,33 @@
-import React, { memo, useMemo } from "react";
+import React, { useMemo } from "react";
 import styled from 'styled-components';
 
 const TomatoStyle = styled.div`
   position: relative;
   display: inline-block;
-  // top: 12px;
-  // left: 12px;
   width: 25px;
   height: 25px;
   text-align: center;
   cursor: ${(props) => props.cursorKind ? props.cursorKind : 'default'};
 
   &::before {
-    position: absolute;
     content: "";
-    top: 0;
-    left: 0;
+    position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    top: 0;
+    left: 0;
     background-color: ${(props) => props.isDisabled ? '#acacac' : '#ea5548'};
+    border-radius: 50%;
     z-index: 2;
   }
 
   &::after {
+    content: "";
     position: absolute;
     display: block;
-    content: "";
-    right: 0;
     width: 4px;
     height: 6px;
+    right: 0;
     border-radius: 10px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
