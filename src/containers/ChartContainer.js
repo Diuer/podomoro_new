@@ -44,6 +44,7 @@ const DayTextStyle = styled.p`
 `;
 
 export default function ChartContainer({ count, date, timestamp, ...props }) {
+  let [, month, day] = date.split('/');
 
   return (
     <>
@@ -55,7 +56,7 @@ export default function ChartContainer({ count, date, timestamp, ...props }) {
             )}
           </ColumnContainerStyle>
         )}
-        <DayTextStyle>{date}</DayTextStyle>
+        <DayTextStyle>{`${month}/${day}`}</DayTextStyle>
       </DayContainerStyle>
     </>
   )
