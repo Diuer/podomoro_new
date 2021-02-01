@@ -26,12 +26,13 @@ const ContainerStyle = styled.div`
   svg{
     position: absolute;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
     /* background: #9acd32; 
     border-radius: 50%;*/
     z-index: 3;
+    border-radius: 50%;
   };
 
 
@@ -49,7 +50,7 @@ const ContainerStyle = styled.div`
 
 const CircleStyle = styled.circle`
   fill: #acacac;
-  stroke-width: 100px;
+  stroke-width: 150px;
   stroke-dasharray: ${(props) => props.circleValue + ' 942'};
   stroke: ${(props) => props.isTaskWork ? '#ea5548' : '#b5e254'};
 `;
