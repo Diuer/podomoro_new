@@ -16,13 +16,13 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
-    publicPath: './'
+    publicPath: './dist'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html'
+      template: './template.html',
+      filename: '../index.html'
     })
   ],
   module: {
