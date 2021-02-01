@@ -15,14 +15,18 @@ const NoTaskStyle = styled.p`
 const TodoContainerStyle = styled.div`
   display: block;
   height: 40%;
+  height: calc((100% - 80px - 180px) / 2);
   margin: 25px 0;
+  margin: 0 0 25px 0;
   overflow: auto;
 `;
 
 const DoneContainerStyle = styled.div`
   display: block;
   height: 40%;
+  height: calc((100% - 80px - 180px) / 2);
   margin: 25px 0;
+  margin: 0 0 25px 0;
   overflow: auto;
 `;
 
@@ -59,15 +63,15 @@ export default function ListTaskContainer({ editTask, deleteTask, redoTask, ...p
   return (
     <>
       <MainTitle text='TASK LISTS' />
+      <TabTitle text='TO DO' />
       <TodoContainerStyle>
-        <TabTitle text='TO DO' />
         {!TodoTask.length && <NoTaskStyle>{TEXT.NO_TODO_TASK}</NoTaskStyle>}
         {TodoTask.map((task, index) => {
           return <TodoListTask key={index} index={index} data={task} editTask={editTask} deleteTask={deleteTask} />
         })}
       </TodoContainerStyle>
+      <TabTitle text='DONE' />
       <DoneContainerStyle>
-        <TabTitle text='DONE' />
         {!DoneTask.length && <NoTaskStyle>{TEXT.NO_DONE_TASK}</NoTaskStyle>}
         {DoneTask.map((task, index) => {
           return <CompletedListTask key={index} index={index} data={task} editTask={editTask} deleteTask={deleteTask} redoTask={redoTask} />
