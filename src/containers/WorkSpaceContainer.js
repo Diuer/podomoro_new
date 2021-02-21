@@ -55,7 +55,7 @@ const BreakTextStyle = styled.p`
   background-color: #b5e254;
   color: #fcfcfc;
   border-radius: 8px;
-  margin: auto;
+  margin: 0 auto;
 `;
 
 let timer = null;
